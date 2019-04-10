@@ -183,6 +183,10 @@ user_hand = []
 
 # The Computer will randomly seperate the WRESTLERS into two Hands; one for the User one for the Computer
 
+def print_user_cards(arr)
+  arr.each { |wrestler| puts wrestler[:name] }
+end
+
 def details(arr)
   computer_hand = []
   user_hand = []
@@ -193,8 +197,9 @@ def details(arr)
       computer_hand << arr
     end
   end
-  puts "Your Wrestlers are; #{user_hand[0][:name]}, "
-  puts "Your first wrestler is #{user_hand[0][:name]}"
+  puts "Here are your wrestlers;"
+  print_user_cards(user_hand)
+  puts "\nYour first wrestler is #{user_hand[0][:name]}"
   puts "Here are his attributes;"
   puts "Age: #{user_hand[0][:age]}"
   puts "Alive?: #{user_hand[0][:alive]}"
@@ -203,7 +208,6 @@ def details(arr)
   puts "Number of movie apperances: #{user_hand[0][:movies]}"
   puts "Number of TV shows: : #{user_hand[0][:unique_tv_shows]}"
   puts "Billed weight: : #{user_hand[0][:billed_weight]}lbs"
-
 end
 
 
