@@ -2,7 +2,7 @@
 
 ## Programme Requirements
 
-number of WRESTLERS - 16
+Number of WRESTLERS - 16
 
 The Computer will randomly seperate the WRESTLERS into two Hands; one for the User one for the Computer
 The Hands will be stored in an Hash, and used in a round in order starting from the first Index Position
@@ -26,4 +26,3 @@ championships sourced from https://www.wwe.com/inside/wwe-most-title-wins-decora
 all other info taken from the persons wikipedia as at 09.04.2019 and compiled at my descretion
 unique_tv_shows does not include wrestling shows i.e smackdown, raw
 unique_tv_shows taken from listed programmes only including documentaries. movies taken from listed movies
-# top_trumps
