@@ -187,9 +187,23 @@ def print_user_cards(arr)
   arr.each { |wrestler| puts wrestler[:name] }
 end
 
+class Array
+  def fisher_yates_shuffle
+    upper = self.length - 1
+    upper.downto(1).each do |current_index|
+      random_index = rand(current_index + 1)
+      temp = self[random_index]
+      self[random_index] = self[current_index]
+      self[current_index] = temp
+    end
+    self
+  end
+end
+
 def details(arr)
   computer_hand = []
   user_hand = []
+  arr.fisher_yates_shuffle
   arr.each_with_index do |arr, index|
     if index.even?
       user_hand << arr 
