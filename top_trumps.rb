@@ -50,8 +50,11 @@ def details(arr)
 
   user_card_number = 14
 
+  spare_hand = []
+
   until user_card_number == 16 
   
+
   puts "\nYour wrestler is #{user_hand[0]["name"]}"
   puts "Here are his attributes;"
   puts "Age: #{user_hand[0]["age"]}"
@@ -76,6 +79,7 @@ def details(arr)
   puts "Please select an attribute to challange the computer\n"
   attr = prompt.select("Choose your attribute?", choices)
 
+
   if attr == 0 
     puts "you have selected Age\n"
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
@@ -88,14 +92,36 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       end
       user_card_number += 1
-    else
+      user_hand.concat(spare_hand)
+      spare_hand = []
+
+    elsif user_hand[0]["age"] < computer_hand[0]["age"]
       puts "This means you lost"
       computer_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       user_hand.each_with_index do |x, y| y =-1
       end
       user_card_number -= 1
+      computer_hand.concat(spare_hand)
+      spare_hand = []
+    
+    
+    
+    else
+      puts "It's a draw!"
+      spare_hand << computer_hand[0]
+      spare_hand << user_hand[0]
+      user_hand.delete(user_hand[0])
+      computer_hand.delete(computer_hand[0])
+      computer_hand.each_with_index do |x, y| y =-1
+      end
+      user_hand.each_with_index do |x, y| y =-1
+      end
+      user_card_number -= 1
     end
+
+
+
   elsif attr == 1
     puts "you have selected Alive"
   elsif attr == 2
@@ -112,6 +138,12 @@ def details(arr)
   computer_hand << computer_hand.shift
   puts "Here are your cards\n\n"
   print_user_cards(user_hand)
+  puts
+  puts
+  print_user_cards(computer_hand)
+  puts
+  puts
+  print_user_cards(spare_hand)
 end
 end
 
