@@ -82,11 +82,16 @@ def details(arr)
     puts "Their age is #{computer_hand[0]["age"]}"
     if user_hand[0]["age"] > computer_hand[0]["age"]
       puts "This means you win!"
+      user_hand << computer_hand[0]
+      computer_hand.delete(computer_hand[0])
+      computer_hand.each_with_index do |x, y| y =-1
+      end
     else
       puts "This means you lost"
     end
   elsif attr == 1
     puts "you have selected Alive"
+    ``
   elsif attr == 2
     puts "you have selected Debut"
   elsif attr == 3
@@ -98,7 +103,7 @@ def details(arr)
   else
     puts "you have selected Billed weight"
   end
-  
+  print_user_cards(user_hand)
   user_card_number += 1
 end
 
