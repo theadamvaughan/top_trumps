@@ -1,19 +1,8 @@
 
 require 'json'
 require 'TTY'
-prompt = TTY::Prompt.new
 file = File.open './wrestlers.json'
 WRESTLERS = JSON.parse(file.read)
-
-choices = [
-  {name: 'Age', value: 0},
-  {name: 'Alive', value: 1},
-  {name: 'Debut', value: 2},
-  {name: 'Championships', value: 3},
-  {name: 'Number of TV appearences', value: 4},
-  {name: 'Number of TV shows', value: 5},
-  {name: 'Billed weight', value: 6}
-]
 
 computer_hand = []
 user_hand = []
@@ -84,14 +73,20 @@ def details(arr)
   {name: 'Billed weight', value: 6}
 ]
 
-  puts "Please select an attribute to challange the computer"
+  puts "Please select an attribute to challange the computer\n"
   attr = prompt.select("Choose your attribute?", choices)
 
   if attr == 0 
-    puts "you have selected Age"
+    puts "you have selected Age\n"
+    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts "Their age is #{computer_hand[0]["age"]}"
+    if user_hand[0]["age"] > computer_hand[0]["age"]
+      puts "This means you win!"
+    else
+      puts "This means you lost"
+    end
   elsif attr == 1
     puts "you have selected Alive"
-    puts user_hand
   elsif attr == 2
     puts "you have selected Debut"
   elsif attr == 3
