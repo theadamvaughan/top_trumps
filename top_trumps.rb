@@ -83,6 +83,7 @@ def details(arr)
     if user_hand[0]["age"] > computer_hand[0]["age"]
       puts "This means you win!"
       user_hand << computer_hand[0]
+      user_hand << user_hand.shift
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
@@ -108,8 +109,9 @@ def details(arr)
   else
     puts "you have selected Billed weight"
   end
-  user_hand << user_hand.shift
   computer_hand << computer_hand.shift
+  puts "Here are your cards\n\n"
+  print_user_cards(user_hand)
 end
 end
 
