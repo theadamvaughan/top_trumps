@@ -86,12 +86,17 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
+      user_card_number += 1
     else
       puts "This means you lost"
+      computer_hand << user_hand[0]
+      user_hand.delete(user_hand[0])
+      user_hand.each_with_index do |x, y| y =-1
+      end
+      user_card_number -= 1
     end
   elsif attr == 1
     puts "you have selected Alive"
-    ``
   elsif attr == 2
     puts "you have selected Debut"
   elsif attr == 3
@@ -103,10 +108,9 @@ def details(arr)
   else
     puts "you have selected Billed weight"
   end
-  print_user_cards(user_hand)
-  user_card_number += 1
+  user_hand << user_hand.shift
+  computer_hand << computer_hand.shift
 end
-
 end
 
 details(WRESTLERS)
