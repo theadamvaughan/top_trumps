@@ -26,7 +26,7 @@
     "debut": 1972,
     "championships": 29,
     "movies": 0,
-    "tv_shows": 0,
+    "unique_tv_shows": 0,
     "billed_weight": 243
   },
   {
@@ -36,7 +36,7 @@
     "debut": 1990,
     "championships": 28,
     "movies": 6,
-    "tv_shows": 20,
+    "unique_tv_shows": 20,
     "billed_weight": 227
   },
   {
@@ -46,7 +46,7 @@
     "debut": 1989,
     "championships": 27,
     "movies": 1,
-    "tv_shows": 2,
+    "unique_tv_shows": 2,
     "billed_weight": 256
   },
   {
