@@ -41,18 +41,13 @@ def details(arr)
     end
   end
 
-# Prints out the users wrestlers
-
-  puts "Here are your wrestlers;"
-  print_user_cards(user_hand)
-  
 # Programme will loop until either the user or computer's hand collects all the cards
 
   spare_hand = []
-  user_card_number = 8
 
-  until user_hand.count == 16 || user_hand.count == 0
-  puts user_card_number
+  until user_hand.count == 16 || computer_hand.count == 16
+  puts "Here are your wrestlers;\n\n"
+  print_user_cards(user_hand)
   puts "\nYour wrestler is #{user_hand[0]["name"]}"
   puts "Here are his attributes;"
   puts "Age: #{user_hand[0]["age"]}"
@@ -78,7 +73,7 @@ def details(arr)
   attr = prompt.select("Choose your attribute?", choices)
 
   if attr == 0
-    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts "\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "His age is #{computer_hand[0]["age"]}"
     if user_hand[0]["age"] < computer_hand[0]["age"]
       puts "This means you win!\n\n"
@@ -110,7 +105,7 @@ def details(arr)
       end
     end
   elsif attr == 1
-    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts "\nMy wrestler is #{computer_hand[0]["name"]}\n"
     if computer_hand[0]["alive"] == false
       puts "Sadly he is no longer with us."
     else
@@ -147,7 +142,7 @@ def details(arr)
       end
     end
   elsif attr == 2
-    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "His debut was in #{computer_hand[0]["debut"]}"
     if user_hand[0]["debut"] < computer_hand[0]["debut"]
       puts "This means you win!\n\n"
@@ -179,7 +174,7 @@ def details(arr)
       end
     end
   elsif attr == 3
-    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has won #{computer_hand[0]["championships"]} championships"
     if user_hand[0]["championships"] > computer_hand[0]["championships"]
       puts "This means you win!\n\n"
@@ -211,7 +206,7 @@ def details(arr)
       end
     end
   elsif attr == 4
-    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has been in #{computer_hand[0]["movies"]} movies"
     if user_hand[0]["movies"] > computer_hand[0]["movies"]
       puts "This means you win!\n\n"
@@ -243,7 +238,7 @@ def details(arr)
       end
     end
   elsif attr == 5
-    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has been in #{computer_hand[0]["unique_tv_shows"]} different TV shows"
     if user_hand[0]["unique_tv_shows"] > computer_hand[0]["unique_tv_shows"]
       puts "This means you win!\n\n"
@@ -275,7 +270,7 @@ def details(arr)
       end
     end
   elsif attr == 6 
-    puts "My wrestler is #{computer_hand[0]["name"]}\n"
+    puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "His billed weight is #{computer_hand[0]["billed_weight"]}lbs"
     if user_hand[0]["billed_weight"] < computer_hand[0]["billed_weight"]
       puts "This means you win!"
@@ -307,12 +302,8 @@ def details(arr)
       end
     end  
   end
+  end
 
-puts user_card_number
-
-  puts "Here are your cards\n\n"
-  print_user_cards(user_hand)
-end
 end
 
 details(WRESTLERS)
