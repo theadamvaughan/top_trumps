@@ -48,13 +48,11 @@ def details(arr)
   
 # Programme will loop until either the user or computer's hand collects all the cards
 
-  user_card_number = 14
-
   spare_hand = []
+  user_card_number = 8
 
-  until user_card_number == 16 
-  
-
+  until user_hand.count == 16 || user_hand.count == 0
+  puts user_card_number
   puts "\nYour wrestler is #{user_hand[0]["name"]}"
   puts "Here are his attributes;"
   puts "Age: #{user_hand[0]["age"]}"
@@ -79,9 +77,7 @@ def details(arr)
   puts "Please select an attribute to challange the computer\n"
   attr = prompt.select("Choose your attribute?", choices)
 
-
-  if attr == 0 
-    puts "you have selected Age\n"
+  if attr == 0
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
     puts "His age is #{computer_hand[0]["age"]}"
     if user_hand[0]["age"] < computer_hand[0]["age"]
@@ -91,10 +87,8 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number += 1
       user_hand.concat(spare_hand)
       spare_hand = []
-
     elsif user_hand[0]["age"] > computer_hand[0]["age"]
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
@@ -102,12 +96,8 @@ def details(arr)
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
       computer_hand.concat(spare_hand)
       spare_hand = []
-    
-    
-    
     else
       puts "It's a draw!\n\n"
       spare_hand << computer_hand[0]
@@ -118,20 +108,14 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
     end
-
-
-
   elsif attr == 1
-    puts "you have selected Alive"
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
     if computer_hand[0]["alive"] == false
       puts "Sadly he is no longer with us."
     else
       puts "He is still alive"
     end
-
     if user_hand[0]["alive"] == true && computer_hand[0]["alive"] == false
       puts "This means you win!\n\n"
       user_hand << computer_hand[0]
@@ -139,10 +123,9 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number += 1
+      user_card_number + spare_hand_count
       user_hand.concat(spare_hand)
       spare_hand = []
-
     elsif user_hand[0]["alive"] == false && computer_hand[0]["alive"] ==   true
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
@@ -150,12 +133,8 @@ def details(arr)
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
       computer_hand.concat(spare_hand)
       spare_hand = []
-    
-    
-    
     else
       puts "It's a draw!\n\n"
       spare_hand << computer_hand[0]
@@ -166,12 +145,8 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
     end
-
-    
   elsif attr == 2
-    puts "you have selected Debut\n"
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
     puts "His debut was in #{computer_hand[0]["debut"]}"
     if user_hand[0]["debut"] < computer_hand[0]["debut"]
@@ -181,10 +156,8 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number += 1
       user_hand.concat(spare_hand)
       spare_hand = []
-
     elsif user_hand[0]["debut"] > computer_hand[0]["debut"]
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
@@ -192,12 +165,8 @@ def details(arr)
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
       computer_hand.concat(spare_hand)
       spare_hand = []
-    
-    
-    
     else
       puts "It's a draw!\n\n"
       spare_hand << computer_hand[0]
@@ -208,15 +177,8 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
     end
-
-
-
-
-
   elsif attr == 3
-    puts "you have selected Championship wins\n"
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has won #{computer_hand[0]["championships"]} championships"
     if user_hand[0]["championships"] > computer_hand[0]["championships"]
@@ -226,10 +188,8 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number += 1
       user_hand.concat(spare_hand)
       spare_hand = []
-
     elsif user_hand[0]["championships"] < computer_hand[0]["championships"]
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
@@ -237,12 +197,8 @@ def details(arr)
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
       computer_hand.concat(spare_hand)
       spare_hand = []
-    
-    
-    
     else
       puts "It's a draw!\n\n"
       spare_hand << computer_hand[0]
@@ -253,13 +209,8 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
     end
-
-
-
   elsif attr == 4
-    puts "you have selected Movie appearences\n"
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has been in #{computer_hand[0]["movies"]} movies"
     if user_hand[0]["movies"] > computer_hand[0]["movies"]
@@ -269,10 +220,8 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number += 1
       user_hand.concat(spare_hand)
       spare_hand = []
-
     elsif user_hand[0]["movies"] < computer_hand[0]["movies"]
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
@@ -280,12 +229,8 @@ def details(arr)
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
       computer_hand.concat(spare_hand)
       spare_hand = []
-    
-    
-    
     else
       puts "It's a draw!\n\n"
       spare_hand << computer_hand[0]
@@ -296,15 +241,8 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
     end
-
-
-
-
-
   elsif attr == 5
-    puts "you have selected TV appearences\n"
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has been in #{computer_hand[0]["unique_tv_shows"]} different TV shows"
     if user_hand[0]["unique_tv_shows"] > computer_hand[0]["unique_tv_shows"]
@@ -314,10 +252,8 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number += 1
       user_hand.concat(spare_hand)
       spare_hand = []
-
     elsif user_hand[0]["unique_tv_shows"] < computer_hand[0]["unique_tv_shows"]
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
@@ -325,12 +261,8 @@ def details(arr)
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
       computer_hand.concat(spare_hand)
       spare_hand = []
-    
-    
-    
     else
       puts "It's a draw!\n\n"
       spare_hand << computer_hand[0]
@@ -341,14 +273,8 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
     end
-
-
-
-
   elsif attr == 6 
-    puts "you have selected to compare the wrestlers billed weight\n"
     puts "My wrestler is #{computer_hand[0]["name"]}\n"
     puts "His billed weight is #{computer_hand[0]["billed_weight"]}lbs"
     if user_hand[0]["billed_weight"] < computer_hand[0]["billed_weight"]
@@ -358,10 +284,8 @@ def details(arr)
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number += 1
       user_hand.concat(spare_hand)
       spare_hand = []
-
     elsif user_hand[0]["billed_weight"] > computer_hand[0]["billed_weight"]
       puts "This means you lost"
       computer_hand << user_hand[0]
@@ -369,12 +293,8 @@ def details(arr)
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
       computer_hand.concat(spare_hand)
       spare_hand = []
-    
-    
-    
     else
       puts "It's a draw!"
       spare_hand << computer_hand[0]
@@ -385,18 +305,13 @@ def details(arr)
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
       end
-      user_card_number -= 1
-    end
-
+    end  
   end
 
-
+puts user_card_number
 
   puts "Here are your cards\n\n"
   print_user_cards(user_hand)
-  puts
-  puts
-  print_user_cards(spare_hand)
 end
 end
 
