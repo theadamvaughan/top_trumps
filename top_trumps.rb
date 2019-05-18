@@ -45,7 +45,7 @@ def details(arr)
 
   spare_hand = []
 
-  until user_hand.count == 16 || computer_hand.count == 16
+  until user_hand.count == 0 || computer_hand.count == 0
   puts "Here are your wrestlers;\n\n"
   print_user_cards(user_hand)
   puts "\nYour wrestler is #{user_hand[0]["name"]}"
@@ -57,7 +57,6 @@ def details(arr)
   puts "Number of movie apperances: #{user_hand[0]["movies"]}"
   puts "Number of TV shows: #{user_hand[0]["unique_tv_shows"]}"
   puts "Billed weight: #{user_hand[0]["billed_weight"]} lbs\n\n"
-
   prompt = TTY::Prompt.new
   choices = [
   {name: 'Age', value: 0},
@@ -68,10 +67,8 @@ def details(arr)
   {name: 'Number of TV shows', value: 5},
   {name: 'Billed weight', value: 6}
 ]
-
   puts "Please select an attribute to challange the computer\n"
   attr = prompt.select("Choose your attribute?", choices)
-
   if attr == 0
     puts "\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "His age is #{computer_hand[0]["age"]}"
@@ -99,11 +96,11 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-      end
+    end
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
-      end
     end
+  end
   elsif attr == 1
     puts "\nMy wrestler is #{computer_hand[0]["name"]}\n"
     if computer_hand[0]["alive"] == false
@@ -117,8 +114,7 @@ def details(arr)
       user_hand << user_hand.shift
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
-      end
-      user_card_number + spare_hand_count
+    end
       user_hand.concat(spare_hand)
       spare_hand = []
     elsif user_hand[0]["alive"] == false && computer_hand[0]["alive"] ==   true
@@ -127,7 +123,7 @@ def details(arr)
       user_hand.delete(user_hand[0])
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
-      end
+    end
       computer_hand.concat(spare_hand)
       spare_hand = []
     else
@@ -136,11 +132,11 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-      end
+    end
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
-      end
     end
+  end
   elsif attr == 2
     puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "His debut was in #{computer_hand[0]["debut"]}"
@@ -150,7 +146,7 @@ def details(arr)
       user_hand << user_hand.shift
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
-      end
+    end
       user_hand.concat(spare_hand)
       spare_hand = []
     elsif user_hand[0]["debut"] > computer_hand[0]["debut"]
@@ -159,7 +155,7 @@ def details(arr)
       user_hand.delete(user_hand[0])
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
-      end
+    end
       computer_hand.concat(spare_hand)
       spare_hand = []
     else
@@ -168,11 +164,11 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-      end
+    end
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
-      end
     end
+  end
   elsif attr == 3
     puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has won #{computer_hand[0]["championships"]} championships"
@@ -182,7 +178,7 @@ def details(arr)
       user_hand << user_hand.shift
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
-      end
+    end
       user_hand.concat(spare_hand)
       spare_hand = []
     elsif user_hand[0]["championships"] < computer_hand[0]["championships"]
@@ -191,7 +187,7 @@ def details(arr)
       user_hand.delete(user_hand[0])
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
-      end
+    end
       computer_hand.concat(spare_hand)
       spare_hand = []
     else
@@ -200,11 +196,11 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-      end
+    end
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
-      end
     end
+  end
   elsif attr == 4
     puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has been in #{computer_hand[0]["movies"]} movies"
@@ -214,7 +210,7 @@ def details(arr)
       user_hand << user_hand.shift
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
-      end
+    end
       user_hand.concat(spare_hand)
       spare_hand = []
     elsif user_hand[0]["movies"] < computer_hand[0]["movies"]
@@ -223,7 +219,7 @@ def details(arr)
       user_hand.delete(user_hand[0])
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
-      end
+    end
       computer_hand.concat(spare_hand)
       spare_hand = []
     else
@@ -232,11 +228,11 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-      end
+    end
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
-      end
     end
+  end
   elsif attr == 5
     puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "He has been in #{computer_hand[0]["unique_tv_shows"]} different TV shows"
@@ -246,7 +242,7 @@ def details(arr)
       user_hand << user_hand.shift
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
-      end
+    end
       user_hand.concat(spare_hand)
       spare_hand = []
     elsif user_hand[0]["unique_tv_shows"] < computer_hand[0]["unique_tv_shows"]
@@ -255,7 +251,7 @@ def details(arr)
       user_hand.delete(user_hand[0])
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
-      end
+    end
       computer_hand.concat(spare_hand)
       spare_hand = []
     else
@@ -264,11 +260,11 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-      end
+    end
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
-      end
     end
+  end
   elsif attr == 6 
     puts"\nMy wrestler is #{computer_hand[0]["name"]}\n"
     puts "His billed weight is #{computer_hand[0]["billed_weight"]}lbs"
@@ -278,7 +274,7 @@ def details(arr)
       user_hand << user_hand.shift
       computer_hand.delete(computer_hand[0])
       computer_hand.each_with_index do |x, y| y =-1
-      end
+    end
       user_hand.concat(spare_hand)
       spare_hand = []
     elsif user_hand[0]["billed_weight"] > computer_hand[0]["billed_weight"]
@@ -287,7 +283,7 @@ def details(arr)
       user_hand.delete(user_hand[0])
       computer_hand << computer_hand.shift
       user_hand.each_with_index do |x, y| y =-1
-      end
+    end
       computer_hand.concat(spare_hand)
       spare_hand = []
     else
@@ -296,14 +292,13 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-      end
+    end
       computer_hand.each_with_index do |x, y| y =-1
       user_hand.each_with_index do |x, y| y =-1
-      end
-    end  
+    end
   end
-  end
-
+end
+end
 end
 
 details(WRESTLERS)
