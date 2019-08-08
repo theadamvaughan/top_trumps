@@ -1,0 +1,162 @@
+[
+  {
+    "name": "McLaren P1",
+    "0_60mph": 2.6,
+    "top_speed": 217,
+    "bhp": 903,
+    "weight": 1450,
+    "engine_capacity": 3799,
+    "used_price": 2000000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?458
+  },
+  {
+    "name": "Saleen S7",
+    "0_60mph": 3.3,
+    "top_speed": 239,
+    "bhp": 550,
+    "weight": 1247,
+    "engine_capacity": 7008,
+    "used_price": 250000
+    // http: //supercarworld.com/cgi-bin/showgeneral.cgi?090
+  },
+  {
+    "name": "Ferrari Enzo",
+    "0_60mph": 3.4,
+    "top_speed": 219,
+    "bhp": 903,
+    "weight": 1365,
+    "engine_capacity": 5998,
+    "used_price": 2250000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?175
+  },
+  {
+    "name": "Koenigsegg CCXR",
+    "0_60mph": 3.1,
+    "top_speed": 250,
+    "bhp": 1018,
+    "weight": 1180,
+    "engine_capacity": 4700,
+    "used_price": 800000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?386
+  },
+  {
+    "name": "Pagani Zonda F",
+    "0_60mph": 3.5,
+    "top_speed": 207,
+    "bhp": 650,
+    "weight": 1230,
+    "engine_capacity": 7291,
+    "used_price": 1500000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?334
+  },
+  {
+    "name": "Lamborghini Reventon",
+    "0_60mph": 3.2,
+    "top_speed": 211,
+    "bhp": 650,
+    "weight": 1665,
+    "engine_capacity": 6496,
+    "used_price": 1200000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?448
+  },
+  {
+    "name": "Porsche 918 Spyder",
+    "0_60mph": 2.2,
+    "top_speed": 214,
+    "bhp": 887,
+    "weight": 1166,
+    "engine_capacity": 4593,
+    "used_price": 1400000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?459
+  },
+  {
+    "name": "Maserati MC12",
+    "0_60mph": 3.7,
+    "top_speed": 205,
+    "bhp": 622,
+    "weight": 1335,
+    "engine_capacity": 5998,
+    "used_price": 2500000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?266
+  },
+  {
+    "name": "Bugatti Veyron Supersport",
+    "0_60mph": 2.4,
+    "top_speed": 268,
+    "bhp": 1183,
+    "weight": 1843,
+    "engine_capacity": 7993,
+    "used_price": 1500000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?455
+  },
+  {
+    "name": "Mercedes SLR McLaren",
+    "0_60mph": 3.7,
+    "top_speed": 207,
+    "bhp": 626,
+    "weight": 1693,
+    "engine_capacity": 5439,
+    "used_price": 350000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?088
+  },
+  {
+    "name": "Hennessey Venom GT",
+    "0_60mph": 3.4,
+    "top_speed": 270,
+    "bhp": 1244,
+    "weight": 1244,
+    "engine_capacity": 7000,
+    "used_price": 1000000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?465
+  },
+  {
+    "name": "Nissan GT-R (R35 Mk 3)",
+    "0_60mph": 2.8,
+    "top_speed": 196,
+    "bhp": 562,
+    "weight": 1752,
+    "engine_capacity": 3799,
+    "used_price": 90000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?779
+  },
+  {
+    "name": "Gumpert Apollo",
+    "0_60mph": 3.0,
+    "top_speed": 224,
+    "bhp": 650,
+    "weight": 1100,
+    "engine_capacity": 4163,
+    "used_price": 300000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?302
+  },
+  {
+    "name": "Ford GT",
+    "0_60mph": 3.6,
+    "top_speed": 210,
+    "bhp": 550,
+    "weight": 1585,
+    "engine_capacity": 5409,
+    "used_price": 3500000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?7195
+  },
+  {
+    "name": "Noble M600",
+    "0_60mph": 2.9,
+    "top_speed": 225,
+    "bhp": 662,
+    "weight": 1198,
+    "engine_capacity": 4439,
+    "used_price": 206000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?440
+  },
+  {
+    "name": "Aston Martin V12 Zagato",
+    "0_60mph": 4.0,
+    "top_speed": 190,
+    "bhp": 510,
+    "weight": 1680,
+    "engine_capacity": 5935,
+    "used_price": 450000
+    // http://supercarworld.com/cgi-bin/showgeneral.cgi?611
+  }
+]
