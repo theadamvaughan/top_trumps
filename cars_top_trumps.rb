@@ -1,17 +1,17 @@
+# .... https://www.codecademy.com/courses/learn-ruby/lessons/a-night-at-the-movies/exercises/what-youll-be-building-5?action=resume_content_item
+
 
 require 'json'
 require 'TTY'
 file = File.open './cars.json'
 CARS = JSON.parse(file.read)
 
-computer_hand = []
-user_hand = []
-
 # Code to print a list of the cards in the users hand
 
 def print_user_cards(arr)
   arr.each { |car| puts car["name"] }
 end
+
 
 class Array
   def fisher_yates_shuffle
@@ -29,6 +29,9 @@ end
 # fisher yates shuffle so that the cards are randomly split into two piles to start the game
 # and then the details are printed out into the terminal
 
+computer_hand = []
+user_hand = []
+
 def details(arr)
   computer_hand = []
   user_hand = []
@@ -41,9 +44,17 @@ def details(arr)
     end
   end
 
-# Programme will loop until either the user or computer's hand collects all the cards
-
+def user_win(user_hand, computer_hand, spare_hand)
+  user_hand << computer_hand[0]
+  user_hand << user_hand.shift
+  computer_hand.delete(computer_hand[0])
+  computer_hand.each_with_index { |x, y| y =-1 }
+  user_hand.concat(spare_hand)
   spare_hand = []
+end
+
+spare_hand = []
+# Programme will loop until either the user or computer's hand collects all the cards
 
   until user_hand.count == 0 || computer_hand.count == 0
   puts "Here are your cars;\n\n"
@@ -73,12 +84,7 @@ def details(arr)
     puts "It's 0 to 60mph is #{computer_hand[0]["0_60mph"]} seconds"
     if user_hand[0]["0_60mph"] < computer_hand[0]["0_60mph"]
       puts "This means you win!\n\n"
-      user_hand << computer_hand[0]
-      user_hand << user_hand.shift
-      computer_hand.delete(computer_hand[0])
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.concat(spare_hand)
-      spare_hand = []
+      user_win(user_hand, computer_hand, spare_hand)
     elsif user_hand[0]["0_60mph"] > computer_hand[0]["0_60mph"]
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
@@ -93,9 +99,9 @@ def details(arr)
       spare_hand << user_hand[0]
       user_hand.delete(user_hand[0])
       computer_hand.delete(computer_hand[0])
-    end
       computer_hand.each_with_index { |x, y| y =-1 }
       user_hand.each_with_index { |x, y| y =-1 }
+    end
   elsif attr == 1
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "It's top speed is #{computer_hand[0]["top_speed"]}mph"
