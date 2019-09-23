@@ -109,11 +109,7 @@ end
     puts "It's top speed is #{computer_hand[0]["top_speed"]}mph"
     if user_hand[0]["top_speed"] > computer_hand[0]["top_speed"]
       puts "This means you win!\n\n"
-      user_hand << computer_hand[0]
-      user_hand << user_hand.shift
-      computer_hand.delete(computer_hand[0])
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.concat(spare_hand)
+      user_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     elsif user_hand[0]["top_speed"] < computer_hand[0]["top_speed"]
       puts "This means you lost\n\n"
@@ -137,11 +133,7 @@ end
     puts "Its BHP is #{computer_hand[0]["bhp"]}"
     if user_hand[0]["bhp"] > computer_hand[0]["bhp"]
       puts "This means you win!\n\n"
-      user_hand << computer_hand[0]
-      user_hand << user_hand.shift
-      computer_hand.delete(computer_hand[0])
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.concat(spare_hand)
+      user_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     elsif user_hand[0]["bhp"] < computer_hand[0]["bhp"]
       puts "This means you lost\n\n"
@@ -165,11 +157,7 @@ end
     puts "Its weight is #{computer_hand[0]["weight"]}kgs"
     if user_hand[0]["weight"] < computer_hand[0]["weight"]
       puts "This means you win!\n\n"
-      user_hand << computer_hand[0]
-      user_hand << user_hand.shift
-      computer_hand.delete(computer_hand[0])
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.concat(spare_hand)
+      user_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     elsif user_hand[0]["weight"] > computer_hand[0]["weight"]
       puts "This means you lost\n\n"
@@ -193,11 +181,7 @@ end
     puts "It has an engine capacity of #{computer_hand[0]["engine_capacity"]}cc"
     if user_hand[0]["engine_capacity"] > computer_hand[0]["engine_capacity"]
       puts "This means you win!\n\n"
-      user_hand << computer_hand[0]
-      user_hand << user_hand.shift
-      computer_hand.delete(computer_hand[0])
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.concat(spare_hand)
+      user_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     elsif user_hand[0]["engine_capacity"] < computer_hand[0]["engine_capacity"]
       puts "This means you lost\n\n"
@@ -219,11 +203,7 @@ end
     puts "It costs £#{computer_hand[0]["used_price"]}"
     if user_hand[0]["used_price"] > computer_hand[0]["used_price"]
       puts "This means you win!\n\n"
-      user_hand << computer_hand[0]
-      user_hand << user_hand.shift
-      computer_hand.delete(computer_hand[0])
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.concat(spare_hand)
+      user_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     elsif user_hand[0]["used_price"] < computer_hand[0]["used_price"]
       puts "This means you lost\n\n"
