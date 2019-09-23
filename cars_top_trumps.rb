@@ -62,6 +62,13 @@ def computer_win(user_hand, computer_hand, spare_hand)
   computer_hand.concat(spare_hand)
 end
 
+def draw(user_hand, computer_hand, spare_hand)
+  spare_hand << computer_hand[0]
+  spare_hand << user_hand[0]
+  user_hand.delete(user_hand[0])
+  computer_hand.delete(computer_hand[0])
+end
+
 # Programme will loop until either the user or computer's hand collects all the cards
 
 
@@ -76,6 +83,7 @@ end
   puts "Weight: #{user_hand[0]["weight"]}kgs"
   puts "Engine Capacity: #{user_hand[0]["engine_capacity"]}cc"
   puts "Cost: £#{user_hand[0]["used_price"]}\n\n"
+  puts "......................................................."
 
   prompt = TTY::Prompt.new
   choices = [
@@ -88,6 +96,7 @@ end
 ]
   puts "Please select an attribute to challange the computer\n"
   attr = prompt.select("Choose your attribute?", choices)
+
   if attr == 0
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "It's 0 to 60mph is #{computer_hand[0]["0_60mph"]} seconds"
@@ -101,13 +110,11 @@ end
       spare_hand = []
     else
       puts "It's a draw!\n\n"
-      spare_hand << computer_hand[0]
-      spare_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand.delete(computer_hand[0])
+      draw(user_hand, computer_hand, spare_hand)
+      spare_hand = []
+    end
       computer_hand.each_with_index { |x, y| y =-1 }
       user_hand.each_with_index { |x, y| y =-1 }
-    end
   elsif attr == 1
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "It's top speed is #{computer_hand[0]["top_speed"]}mph"
@@ -121,10 +128,8 @@ end
       spare_hand = []
     else
       puts "It's a draw!\n\n"
-      spare_hand << computer_hand[0]
-      spare_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand.delete(computer_hand[0])
+      draw(user_hand, computer_hand, spare_hand)
+      spare_hand = []
     end
       computer_hand.each_with_index { |x, y| y =-1 }
       user_hand.each_with_index { |x, y| y =-1 }
@@ -141,10 +146,8 @@ end
       spare_hand = []
     else
       puts "It's a draw!\n\n"
-      spare_hand << computer_hand[0]
-      spare_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand.delete(computer_hand[0])
+      draw(user_hand, computer_hand, spare_hand)
+      spare_hand = []
     end
       computer_hand.each_with_index { |x, y| y =-1 }
       user_hand.each_with_index { |x, y| y =-1 }
@@ -161,10 +164,8 @@ end
       spare_hand = []
     else
       puts "It's a draw!\n\n"
-      spare_hand << computer_hand[0]
-      spare_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand.delete(computer_hand[0])
+      draw(user_hand, computer_hand, spare_hand)
+      spare_hand = []
     end
       computer_hand.each_with_index { |x, y| y =-1 }
       user_hand.each_with_index { |x, y| y =-1 }
@@ -181,10 +182,8 @@ end
       spare_hand = []
     else
       puts "It's a draw!\n\n"
-      spare_hand << computer_hand[0]
-      spare_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand.delete(computer_hand[0])
+      draw(user_hand, computer_hand, spare_hand)
+      spare_hand = []
     end
   elsif attr == 5
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
@@ -199,10 +198,8 @@ end
       spare_hand = []
     else
       puts "It's a draw!\n\n"
-      spare_hand << computer_hand[0]
-      spare_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand.delete(computer_hand[0])
+      draw(user_hand, computer_hand, spare_hand)
+      spare_hand = []
     end
       computer_hand.each_with_index { |x, y| y =-1 }
       user_hand.each_with_index { |x, y| y =-1 }
