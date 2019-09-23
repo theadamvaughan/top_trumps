@@ -54,6 +54,14 @@ def user_win(user_hand, computer_hand, spare_hand)
   user_hand.concat(spare_hand)
 end
 
+def computer_win(user_hand, computer_hand, spare_hand)
+  computer_hand << user_hand[0]
+  user_hand.delete(user_hand[0])
+  computer_hand << computer_hand.shift
+  user_hand.each_with_index { |x, y| y =-1 }
+  computer_hand.concat(spare_hand)
+end
+
 # Programme will loop until either the user or computer's hand collects all the cards
 
 
@@ -89,11 +97,7 @@ end
       spare_hand = []
     elsif user_hand[0]["0_60mph"] > computer_hand[0]["0_60mph"]
       puts "This means you lost\n\n"
-      computer_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand << computer_hand.shift
-      user_hand.each_with_index { |x, y| y =-1 }
-      computer_hand.concat(spare_hand)
+      computer_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     else
       puts "It's a draw!\n\n"
@@ -113,11 +117,7 @@ end
       spare_hand = []
     elsif user_hand[0]["top_speed"] < computer_hand[0]["top_speed"]
       puts "This means you lost\n\n"
-      computer_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand << computer_hand.shift
-      user_hand.each_with_index { |x, y| y =-1 }
-      computer_hand.concat(spare_hand)
+      computer_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     else
       puts "It's a draw!\n\n"
@@ -137,11 +137,7 @@ end
       spare_hand = []
     elsif user_hand[0]["bhp"] < computer_hand[0]["bhp"]
       puts "This means you lost\n\n"
-      computer_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand << computer_hand.shift
-      user_hand.each_with_index { |x, y| y =-1 }
-      computer_hand.concat(spare_hand)
+      computer_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     else
       puts "It's a draw!\n\n"
@@ -161,11 +157,7 @@ end
       spare_hand = []
     elsif user_hand[0]["weight"] > computer_hand[0]["weight"]
       puts "This means you lost\n\n"
-      computer_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand << computer_hand.shift
-      user_hand.each_with_index { |x, y| y =-1 }
-      computer_hand.concat(spare_hand)
+      computer_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     else
       puts "It's a draw!\n\n"
@@ -185,11 +177,7 @@ end
       spare_hand = []
     elsif user_hand[0]["engine_capacity"] < computer_hand[0]["engine_capacity"]
       puts "This means you lost\n\n"
-      computer_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand << computer_hand.shift
-      user_hand.each_with_index { |x, y| y =-1 }
-      computer_hand.concat(spare_hand)
+      computer_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     else
       puts "It's a draw!\n\n"
@@ -207,11 +195,7 @@ end
       spare_hand = []
     elsif user_hand[0]["used_price"] < computer_hand[0]["used_price"]
       puts "This means you lost\n\n"
-      computer_hand << user_hand[0]
-      user_hand.delete(user_hand[0])
-      computer_hand << computer_hand.shift
-      user_hand.each_with_index { |x, y| y =-1 }
-      computer_hand.concat(spare_hand)
+      computer_win(user_hand, computer_hand, spare_hand)
       spare_hand = []
     else
       puts "It's a draw!\n\n"
