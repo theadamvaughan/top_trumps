@@ -44,17 +44,18 @@ def details(arr)
     end
   end
 
+spare_hand = []
+
 def user_win(user_hand, computer_hand, spare_hand)
   user_hand << computer_hand[0]
   user_hand << user_hand.shift
   computer_hand.delete(computer_hand[0])
   computer_hand.each_with_index { |x, y| y =-1 }
   user_hand.concat(spare_hand)
-  spare_hand = []
 end
 
-spare_hand = []
 # Programme will loop until either the user or computer's hand collects all the cards
+
 
   until user_hand.count == 0 || computer_hand.count == 0
   puts "Here are your cars;\n\n"
@@ -85,6 +86,7 @@ spare_hand = []
     if user_hand[0]["0_60mph"] < computer_hand[0]["0_60mph"]
       puts "This means you win!\n\n"
       user_win(user_hand, computer_hand, spare_hand)
+      spare_hand = []
     elsif user_hand[0]["0_60mph"] > computer_hand[0]["0_60mph"]
       puts "This means you lost\n\n"
       computer_hand << user_hand[0]
