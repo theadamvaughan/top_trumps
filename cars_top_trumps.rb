@@ -72,6 +72,11 @@ def draw(user_hand, computer_hand, spare_hand)
   puts "It's a draw!\n\n"
 end
 
+def card_position_change(computer_hand, user_hand)
+  computer_hand.each_with_index { |x, y| y =-1 }
+  user_hand.each_with_index { |x, y| y =-1 }
+end
+
 # Programme will loop until either the user or computer's hand collects all the cards
 
 
@@ -113,8 +118,7 @@ end
       draw(user_hand, computer_hand, spare_hand)
       spare_hand = []
     end
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.each_with_index { |x, y| y =-1 }
+      card_position_change(computer_hand, user_hand)
   elsif attr == 1
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "It's top speed is #{computer_hand[0]["top_speed"]}mph"
@@ -128,8 +132,7 @@ end
       draw(user_hand, computer_hand, spare_hand)
       spare_hand = []
     end
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.each_with_index { |x, y| y =-1 }
+      card_position_change(computer_hand, user_hand)
   elsif attr == 2
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "Its BHP is #{computer_hand[0]["bhp"]}"
@@ -143,8 +146,7 @@ end
       draw(user_hand, computer_hand, spare_hand)
       spare_hand = []
     end
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.each_with_index { |x, y| y =-1 }
+      card_position_change(computer_hand, user_hand)
   elsif attr == 3
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "Its weight is #{computer_hand[0]["weight"]}kgs"
@@ -158,8 +160,7 @@ end
       draw(user_hand, computer_hand, spare_hand)
       spare_hand = []
     end
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.each_with_index { |x, y| y =-1 }
+      card_position_change(computer_hand, user_hand)
   elsif attr == 4
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "It has an engine capacity of #{computer_hand[0]["engine_capacity"]}cc"
@@ -173,6 +174,7 @@ end
       draw(user_hand, computer_hand, spare_hand)
       spare_hand = []
     end
+        card_position_change(computer_hand, user_hand)
   elsif attr == 5
     puts "\nMy car is the #{computer_hand[0]["name"]}\n"
     puts "It costs £#{computer_hand[0]["used_price"]}"
@@ -186,8 +188,7 @@ end
       draw(user_hand, computer_hand, spare_hand)
       spare_hand = []
     end
-      computer_hand.each_with_index { |x, y| y =-1 }
-      user_hand.each_with_index { |x, y| y =-1 }
+      card_position_change(computer_hand, user_hand)
     end
   end
 end
